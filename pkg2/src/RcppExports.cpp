@@ -14,6 +14,16 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// call_pkg1_class_from_pkg2
+void call_pkg1_class_from_pkg2(int id);
+RcppExport SEXP _pkg2_call_pkg1_class_from_pkg2(SEXP idSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type id(idSEXP);
+    call_pkg1_class_from_pkg2(id);
+    return R_NilValue;
+END_RCPP
+}
 // rcpp_hello_world
 List rcpp_hello_world();
 RcppExport SEXP _pkg2_rcpp_hello_world() {
@@ -27,6 +37,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_pkg2_call_pkg1_from_pkg2", (DL_FUNC) &_pkg2_call_pkg1_from_pkg2, 0},
+    {"_pkg2_call_pkg1_class_from_pkg2", (DL_FUNC) &_pkg2_call_pkg1_class_from_pkg2, 1},
     {"_pkg2_rcpp_hello_world", (DL_FUNC) &_pkg2_rcpp_hello_world, 0},
     {NULL, NULL, 0}
 };

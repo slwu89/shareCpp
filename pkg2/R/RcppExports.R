@@ -6,6 +6,11 @@ call_pkg1_from_pkg2 <- function() {
     invisible(.Call('_pkg2_call_pkg1_from_pkg2', PACKAGE = 'pkg2'))
 }
 
+#' @export
+call_pkg1_class_from_pkg2 <- function(id) {
+    invisible(.Call('_pkg2_call_pkg1_class_from_pkg2', PACKAGE = 'pkg2', id))
+}
+
 rcpp_hello_world <- function() {
     .Call('_pkg2_rcpp_hello_world', PACKAGE = 'pkg2')
 }
