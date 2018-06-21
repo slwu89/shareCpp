@@ -5,19 +5,19 @@
 
 using namespace Rcpp;
 
-// rcpp_hello_world
-List rcpp_hello_world();
-RcppExport SEXP _pkg1_rcpp_hello_world() {
+// makeClass1
+void makeClass1(int id);
+RcppExport SEXP _pkg1_makeClass1(SEXP idSEXP) {
 BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(rcpp_hello_world());
-    return rcpp_result_gen;
+    Rcpp::traits::input_parameter< int >::type id(idSEXP);
+    makeClass1(id);
+    return R_NilValue;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_pkg1_rcpp_hello_world", (DL_FUNC) &_pkg1_rcpp_hello_world, 0},
+    {"_pkg1_makeClass1", (DL_FUNC) &_pkg1_makeClass1, 1},
     {NULL, NULL, 0}
 };
 
