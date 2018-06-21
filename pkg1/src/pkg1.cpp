@@ -1,3 +1,5 @@
+// [[Rcpp::interfaces(r, cpp)]]
+
 #include <Rcpp.h>
 
 #include "class1.hpp"

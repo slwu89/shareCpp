@@ -6,3 +6,7 @@ makeClass1 <- function(id) {
     invisible(.Call('_pkg1_makeClass1', PACKAGE = 'pkg1', id))
 }
 
+# Register entry points for exported C++ functions
+methods::setLoadAction(function(ns) {
+    .Call('_pkg1_RcppExport_registerCCallable', PACKAGE = 'pkg1')
+})
