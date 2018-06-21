@@ -5,12 +5,12 @@
 
 using namespace Rcpp;
 
-// testpkg1
-void testpkg1();
-RcppExport SEXP _pkg2_testpkg1() {
+// call_pkg1_from_pkg2
+void call_pkg1_from_pkg2();
+RcppExport SEXP _pkg2_call_pkg1_from_pkg2() {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
-    testpkg1();
+    call_pkg1_from_pkg2();
     return R_NilValue;
 END_RCPP
 }
@@ -26,7 +26,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_pkg2_testpkg1", (DL_FUNC) &_pkg2_testpkg1, 0},
+    {"_pkg2_call_pkg1_from_pkg2", (DL_FUNC) &_pkg2_call_pkg1_from_pkg2, 0},
     {"_pkg2_rcpp_hello_world", (DL_FUNC) &_pkg2_rcpp_hello_world, 0},
     {NULL, NULL, 0}
 };

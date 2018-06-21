@@ -2,8 +2,8 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #' @export
-testpkg1 <- function() {
-    invisible(.Call('_pkg2_testpkg1', PACKAGE = 'pkg2'))
+call_pkg1_from_pkg2 <- function() {
+    invisible(.Call('_pkg2_call_pkg1_from_pkg2', PACKAGE = 'pkg2'))
 }
 
 rcpp_hello_world <- function() {

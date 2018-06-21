@@ -4,6 +4,7 @@
 #ifndef RCPP_pkg1_RCPPEXPORTS_H_GEN_
 #define RCPP_pkg1_RCPPEXPORTS_H_GEN_
 
+#include "pkg1_types.h"
 #include <Rcpp.h>
 
 namespace pkg1 {
