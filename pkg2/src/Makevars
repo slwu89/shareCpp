@@ -1,0 +1,3 @@
+## -*- makefile -*-
+PKG1_PATH=`echo 'library(pkg1); cat(system.file(package="pkg1", "",mustWork = TRUE))' | "${R_HOME}/bin/R" --vanilla --slave`
+PKG_LIBS="$(PKG1_PATH)$(R_ARCH)/pkg1.a"
